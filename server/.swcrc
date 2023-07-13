@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json.schemastore.org/swcrc",
+    "jsc": {
+        "target": "es2022",
+        "parser": {
+            "syntax": "typescript",
+            "decorators": true
+        },
+        "transform": {
+            "decoratorMetadata": true
+        },
+        "baseUrl": "./src",
+        "paths": {
+            "@entities/*": ["./entities/*"],
+            "@tool/*": ["./tool/*"],
+            "@/*": ["./*"]
+        }
+    },
+    "sourceMaps": false
+}
