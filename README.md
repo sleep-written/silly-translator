@@ -40,7 +40,7 @@ But if you want to build the project by yourself, follow these steps:
 
 - Build the DB:
   ```sh
-  ./typeorm -d ./src/data-source.ts migration:run
+  ./typeorm.sh -d ./src/data-source.ts migration:run
   ```
 
 - Insert the seeds into the DB:
