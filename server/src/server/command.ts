@@ -1,4 +1,4 @@
-import { Command, Executable } from '@bleed-believer/commander';
+import { Command, type Executable } from '@bleed-believer/commander';
 import { Espresso } from '@bleed-believer/espresso';
 import express, { json, urlencoded } from 'express';
 import helmet from 'helmet';

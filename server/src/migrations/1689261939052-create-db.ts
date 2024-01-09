@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner } from "typeorm";
+import type { MigrationInterface, QueryRunner } from "typeorm";
 
 export class CreateDb1689261939052 implements MigrationInterface {
     name = 'CreateDb1689261939052'

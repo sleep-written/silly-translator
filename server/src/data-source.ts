@@ -1,14 +1,22 @@
 import { pathResolve } from '@bleed-believer/path-alias';
-import { resolve } from 'path';
 import { DataSource } from 'typeorm';
+import { resolve } from 'path';
 
 export const dataSource = new DataSource({
     type: 'sqlite',
     database: resolve('./database.sqlite'),
     entities: [
-        pathResolve('entities/*.entity.ts')
+        (()  => {
+            const path = pathResolve('entities/*.entity.ts');
+            console.log('entities:', path);
+            return path;
+        })()
     ],
     migrations: [
-        pathResolve('migrations/*.ts')
+        (()  => {
+            const path = pathResolve('migrations/*.ts');
+            console.log('migrations:', path);
+            return path;
+        })()
     ]
 });

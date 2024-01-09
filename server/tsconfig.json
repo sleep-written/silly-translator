@@ -4,10 +4,11 @@
         "module": "ES2022",
         
         "strict": true,
+        "esModuleInterop": true,
         "moduleResolution": "Node",
+        "verbatimModuleSyntax": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
 
         "outDir": "./dist",
         "rootDir": "./src",

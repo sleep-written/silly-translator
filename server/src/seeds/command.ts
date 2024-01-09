@@ -1,5 +1,5 @@
+import { Command, type Executable } from '@bleed-believer/commander';
 import { logger } from '@/logger.js';
-import { Command, Executable } from '@bleed-believer/commander';
 import { seeders } from './seeders/index.js';
 import { dataSource } from '@/data-source.js';
 

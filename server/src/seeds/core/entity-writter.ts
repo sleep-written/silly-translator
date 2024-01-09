@@ -1,4 +1,4 @@
-import { EntityManager, ObjectLiteral } from 'typeorm';
+import { EntityManager, type ObjectLiteral } from 'typeorm';
 
 import { dataSource } from '@/data-source.js';
 

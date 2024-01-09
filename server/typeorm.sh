@@ -15,4 +15,4 @@ fi
 
 # Ejecutar el CLI de TypeORM
 echo \> Ejecutando TypeORM CLI...
-npx bb-path-alias node_modules/typeorm/cli.js $@
+RESOLVE_SRC=true npx bb-path-alias node_modules/typeorm/cli.js $@

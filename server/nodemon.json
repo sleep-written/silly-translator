@@ -5,7 +5,9 @@
         "ts": "node"
     },
     "execArgs": [
-        "--loader=@bleed-believer/path-alias",
-        "--no-warnings"
-    ]
+        "--import=@bleed-believer/path-alias"
+    ],
+    "env": {
+        "RESOLVE_SRC": "true"
+    }
 }

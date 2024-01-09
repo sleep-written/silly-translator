@@ -1,4 +1,4 @@
-import { Command, Executable } from '@bleed-believer/commander';
+import { Command, type Executable } from '@bleed-believer/commander';
 
 import { Appconfig } from '@tool/appconfig/index.js';
 import { logger } from '@/logger.js';

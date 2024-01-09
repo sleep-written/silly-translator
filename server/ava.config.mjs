@@ -8,7 +8,9 @@ export default {
         mts: 'module',
     },
     nodeArguments: [
-        "--loader=@bleed-believer/path-alias",
-        '--no-warnings'
-    ]
+        "--import=@bleed-believer/path-alias",
+    ],
+    environmentVariables: {
+        RESOLVE_SRC: 'true'
+    }
 }
