@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
-        "target": "ES2022",
-        "module": "ES2022",
+        "target": "es2025",
+        "module": "node20",
         
         "strict": true,
         "esModuleInterop": true,
-        "moduleResolution": "Node",
+        "moduleResolution": "node16",
         "verbatimModuleSyntax": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -14,12 +14,11 @@
         "rootDir": "./src",
         "sourceMap": true,
 
-        "baseUrl": "./src",
         "paths": {
-            "@entities/*": ["./entities/*"],
-            "@server/*": ["./server/*"],
-            "@tool/*": ["./tool/*"],
-            "@/*": ["./*"]
+            "@entities/*": ["./src/entities/*"],
+            "@server/*": ["./src/server/*"],
+            "@tool/*": ["./src/tool/*"],
+            "*": ["./src/*"]
         }
     }
 }

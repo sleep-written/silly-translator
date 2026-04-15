@@ -1,6 +1,6 @@
 import { ControllerRouting } from '@bleed-believer/espresso';
 
-import { AngularController } from './angular.controller.js';
+import { ClientController } from './client.controller.js';
 import { APIRouting } from './api/controller.js';
 
 @ControllerRouting({
@@ -8,7 +8,7 @@ import { APIRouting } from './api/controller.js';
         APIRouting,
     ],
     controllers: [
-        AngularController
+        ClientController
     ]
 })
 export class EndpointsRouting {}

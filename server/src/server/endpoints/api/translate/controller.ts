@@ -3,8 +3,8 @@ import { Auditor } from 'audit-var';
 import { parse } from 'node-html-parser';
 import { In } from 'typeorm';
 
+import { Environment } from 'environment.js';
 import { ServerError } from '@server/core/server-error.js';
-import { Appconfig } from '@tool/appconfig/index.js';
 import { Language } from '@entities/language.entity.js';
 
 export class TranslateController extends Controller {
@@ -69,9 +69,9 @@ export class TranslateController extends Controller {
     }
 
     async #getResponse(html: string): Promise<string> {
-        const conf = await Appconfig.load();
+        const env = new Environment();
         const dom = parse(html);
-        const obj = dom.querySelector(conf.query);
+        const obj = dom.querySelector(env.selector);
         if (!obj) {
             throw new Error('The translated text isn\'t found in the google response');
         }

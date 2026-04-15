@@ -1,27 +1,27 @@
-import { Command, type Executable } from '@bleed-believer/commander';
+import type { Executable } from '@bleed-believer/commander';
+
+import { json, urlencoded } from 'express';
 import { Espresso } from '@bleed-believer/espresso';
-import express, { json, urlencoded } from 'express';
+import { Command } from '@bleed-believer/commander';
+
+import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 
-import { Appconfig, type AppconfigStruct } from '@tool/appconfig/index.js';
 import { EndpointsRouting } from './endpoints/routing.js';
-import { dataSource } from '@/data-source.js';
-import { logger } from '@/logger.js';
+import { Environment } from 'environment.js';
+import { dataSource } from 'data-source.js';
+import { logger } from 'logger.js';
 
 @Command({
     name: 'Web Server',
     path: 'server'
 })
 export class ServerCommand implements Executable {
-    #conf!: AppconfigStruct;
+    #env = new Environment();
 
     async start(): Promise<void> {
-        this.#conf = await Appconfig.load();
         const rest = express();
-
-        // Set static paths
-        rest.use(express.static(this.#conf.client));
 
         // Allow certain paths for CORS
         rest.options('api/translate', cors());
@@ -44,7 +44,7 @@ export class ServerCommand implements Executable {
         // Initialize server
         await dataSource.initialize();
         rest.listen(
-            this.#conf.port,
+            this.#env.port,
             '0.0.0.0',
             this.onReady.bind(this)
         );
