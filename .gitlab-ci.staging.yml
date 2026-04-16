@@ -23,7 +23,7 @@ prepare_db_staging:
     # Run migration
     - node --run typeorm -- -d ./src/data-source.ts migration:run
 
-test_server:
+test_server_staging:
   stage:  test
   tags:   [ staging ]
   only:   [ staging ]

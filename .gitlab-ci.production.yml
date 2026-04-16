@@ -23,7 +23,7 @@ prepare_db_production:
     # Run migration
     - node --run typeorm -- -d ./src/data-source.ts migration:run
 
-test_server:
+test_server_production:
   stage:  test
   tags:   [ production ]
   only:   [ master ]
