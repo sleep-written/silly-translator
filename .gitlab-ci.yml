@@ -7,5 +7,5 @@ stages:
   - deploy
 
 include:
-  # - '.gitlab-ci.production.yml'
+  - '.gitlab-ci.production.yml'
   - '.gitlab-ci.staging.yml'
