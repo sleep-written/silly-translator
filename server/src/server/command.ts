@@ -30,7 +30,10 @@ export class ServerCommand implements Executable {
         // Other configurations
         rest.use(json({ type: 'application/json', strict: true }));
         rest.use(urlencoded({ extended: true }));
-        rest.use(helmet());
+
+        rest.use(helmet({
+            contentSecurityPolicy: false
+        }));
         
         const espr = new Espresso(rest, {
             lowercase: true,

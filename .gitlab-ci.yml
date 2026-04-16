@@ -1,0 +1,11 @@
+variables:
+  TERM:         xterm-256color
+
+stages:
+  - prepare
+  - test
+  - deploy
+
+include:
+  # - '.gitlab-ci.production.yml'
+  - '.gitlab-ci.staging.yml'
