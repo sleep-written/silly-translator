@@ -15,7 +15,7 @@ const devTools = {
 export class ClientController extends Controller {
     #root = resolve(
         import.meta.dirname,
-        '../../../../client/dist/client'
+        '../../../../client/dist/client/browser'
     );
 
     async resolvePath(): Promise<string> {

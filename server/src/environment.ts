@@ -1,7 +1,7 @@
 import { Env } from '@tool/env/index.js';
 
 export class Environment {
-    #env = new Env('environment.env');
+    #env = new Env('.env');
 
     get selector(): string {
         return this.#env.get(
