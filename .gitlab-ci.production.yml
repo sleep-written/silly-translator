@@ -9,20 +9,6 @@ stop_pm2_services_production:
     - echo $(pm2 delete @silly-translator/server)
     - pm2 save
 
-prepare_db_production:
-  stage:  prepare
-  tags:   [ production ]
-  only:   [ master ]
-  environment:
-    name: production
-  script:
-    # Prepare environment
-    - cd server
-    - npm ci
-
-    # Run migration
-    - node --run typeorm -- -d ./src/data-source.ts migration:run
-
 test_server_production:
   stage:  test
   tags:   [ production ]
@@ -53,6 +39,9 @@ deploy_application_production:
     - cd ../server
     - npm ci
     - node --run build
+
+    # Run migration
+    - node --run typeorm -- -d ./src/data-source.ts migration:run
 
     # Deploy application
     - env SILLY_TRANSLATOR_PORT=$APP_PORT
